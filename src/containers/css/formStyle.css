@@ -1,0 +1,27 @@
+
+.form_elements{
+	margin : 12px 20px 15px 0px;
+	padding : 0px 30px 0px 20px;
+}
+
+.label_Style{
+	float: left;
+    padding-left: 20px;
+    margin-right: 22px;	
+}
+
+.radio_elements {
+	margin : 10px 40px 0px 0px;
+}
+
+.add_button_elements {
+	padding : 10px 10px 10px 10px;
+	margin-left : 45px;
+	margin-top : 24px;
+}
+
+.reset_button_elements{
+	padding : 8px 14px 6px 10px;
+	margin-left : 45px;
+	margin-top : 24px;
+}
