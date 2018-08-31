@@ -2,7 +2,7 @@
 
 Contact Information is a contact management system
 
-[Deployed App (http://sangeetmukherjee.github.io/contact-information)] (http://sangeetmukherjee.github.io/contact-information)
+[Deployed App - http://sangeetmukherjee.github.io/contact-information](https://sangeetmukherjee.github.io/contact-information)
 
 ## Requirements
 
