@@ -1,94 +1,45 @@
 import React, {PureComponent } from "react";
 import '../css/formStyle.css';
+import {Button} from 'react-bootstrap'
 
 export class FormContainer extends PureComponent {
-	constructor(props){
-		super(props);
-		this.state={
-			input : 'Submit',
-			radioChecked : '',
-			users : []
-		}
-		this.handleChange = this.handleChange.bind(this);
-		this.onSubmit = this.onSubmitHandle.bind(this);
-	}
-	
-	handleChange=(event)=>{
-		if(event.target.name === "firstName"){
-			this.setState({firstName: event.target.value});
-		}if(event.target.name === "lastName"){
-			this.setState({lastName: event.target.value});
-		}if(event.target.name === "email"){
-			this.setState({ email: event.target.value});
-		}if(event.target.name === "mobileNumber"){
-			this.setState({ mobileNumber: event.target.value});
-		}
-	}
-	
-	onSubmitHandle=(event)=>{
-		event.preventDefault();
-		const obj = {firstName:this.state.firstName, lastName:this.state.lastName,email:this.state.email,mobileNumber:this.state.mobileNumber, radioChecked:this.state.radioChecked};
-		let userState = this.state.users;
-		userState.push(obj);
-		this.setState({firstName: '',lastName:'',email:'',mobileNumber:'',radioChecked:'',users:userState});
-		this.props.handleTableContainer(userState);
-	}
-	
-	handleOptionChange=(changeEvent)=>{
-		this.setState({
-			radioChecked: changeEvent.target.value
-		});
-	}
-	
-	onResetClick=()=>{
-		
-		this.state.firstName='';
-		this.state.lastName='';
-		this.state.email='';
-		this.state.mobileNumber='';
-		this.setState({radioChecked:''});
-	}
-	
+
 	render(){
 		return(
-			<form onSubmit={this.onSubmitHandle}>
-				<article>
-					<div className="form_elements">
+			<form onSubmit={this.props.onSubmitHandle} className="contact-form">
+				<div>
+					<div className="form_elements col col-xs-6">
 						<label>First Name:</label>
-						<input type="text" name="firstName" value={this.state.firstName} onChange={this.handleChange} required/>
+						<input type="text" name="firstName" className="form-control" value={this.props.firstName} onChange={this.props.handleChange} required/>
 					</div>
-					<div className="form_elements">
+					<div className="form_elements col col-xs-6">
 						<label>Last Name:</label>
-						<input type="text" name="lastName" value={this.state.lastName} onChange={this.handleChange} required/>
+						<input type="text" name="lastName" className="form-control" value={this.props.lastName} onChange={this.props.handleChange} required/>
 					</div>
-					<div className="form_elements">
-						<label>E-Mail ID::</label>
-						<input type="email" name="email" value={this.state.email} onChange={this.handleChange} />
+					<div className="form_elements col col-xs-6">
+						<label>E-Mail ID:</label>
+						<input type="email" name="email" className="form-control" value={this.props.email} onChange={this.props.handleChange} />
 					</div>
-					<div className="form_elements">
-						<label>Mobile No::</label>
-						<input type="tel" name="mobileNumber" maxlength="10" value={this.state.mobileNumber} onChange={this.handleChange} />
+					<div className="form_elements col col-xs-6">
+						<label>Mobile No:</label>
+						<input type="tel" name="mobileNumber" className="form-control" maxLength="10" minLength="10" value={this.props.mobileNumber} onChange={this.props.handleChange} />
 					</div>
-					<div className="label_style">
-						<label><b>STATUS</b></label>
-					</div>
-					<div>
-						<div>
-							<input id="3" type="radio" name="status" value="Active" checked={this.state.radioChecked==='Active'} onChange={this.handleOptionChange}/>
+					<div className="form_elements col col-xs-12">
+						<label>Status:</label>
+            <div className="radio-container">
+							<input id="3" type="radio" name="status" value="Active" checked={this.props.radioChecked==='Active'} onChange={this.props.handleOptionChange}/>
 							<label for="3">Active</label>
-							
-							<input id="4" type="radio" name="status" value="Inactive" checked={this.state.radioChecked==='Inactive'} onChange={this.handleOptionChange}/>
+
+							<input id="4" type="radio" name="status" value="Inactive" checked={this.props.radioChecked==='Inactive'} onChange={this.props.handleOptionChange}/>
 							<label for="4">Inactive</label>
+            </div>
 						</div>
 					</div>
-				</article>
-				
-				<section className="radio_elements">
-					<div>
-						<button type="submit" className="add_button_elements" value="Submit">ADD</button>
-						<button type="button" className="reset_button_elements" onClick={this.onResetClick}>RESET</button>
-					</div>
-				</section>
+
+        <div className="button-container">
+          <Button type="submit" bsStyle="primary" className="add-button-elements" value="Submit">{this.props.id === undefined || this.props.id ==='' ? 'ADD' : 'SAVE'}</Button>
+          <Button type="button" className="reset-button-elements" onClick={this.props.onResetClick}>RESET</Button>
+        </div>
 			</form>
 		);
 	}

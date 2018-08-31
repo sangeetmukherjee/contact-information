@@ -1,3 +1,19 @@
-.container_styles{
-	background-color : antiquewhite;
+.header-logo {
+  float: left;
+}
+
+.container {
+  width: 100% !important;
+}
+
+.form-horizontal .form-group {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.add-contact-form {
+  background: white;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

@@ -2,4 +2,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background: #E9EBEE !important;
+}
+
+* {
+  border-radius: 0 !important;
 }

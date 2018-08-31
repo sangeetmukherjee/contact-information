@@ -1,27 +1,43 @@
 
 .form_elements{
-	margin : 12px 20px 15px 0px;
-	padding : 0px 30px 0px 20px;
+	padding : 20px 30px 0px 20px;
 }
 
 .label_Style{
 	float: left;
     padding-left: 20px;
-    margin-right: 22px;	
+    margin-right: 22px;
 }
 
-.radio_elements {
-	margin : 10px 40px 0px 0px;
+.contact-form {
 }
 
-.add_button_elements {
-	padding : 10px 10px 10px 10px;
-	margin-left : 45px;
-	margin-top : 24px;
+.button-container {
+	float: right;
+	margin: 15px;
 }
 
-.reset_button_elements{
-	padding : 8px 14px 6px 10px;
-	margin-left : 45px;
-	margin-top : 24px;
+.add-button-elements {
+}
+
+.reset-button-elements{
+	margin-left : 15px;
+}
+
+.radio-container {
+	display: block;
+}
+
+.radio-container label {
+	margin: 0 10px;
+}
+
+.table-container {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	margin: 15px;
+	background-color: white;
+}
+
+.icon-separator {
+	margin-right: 10px;
 }
