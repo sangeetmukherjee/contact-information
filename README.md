@@ -2,6 +2,8 @@
 
 Contact Information is a contact management system
 
+[Deployed App (http://sangeetmukherjee.github.io/contact-information)] (http://sangeetmukherjee.github.io/contact-information)
+
 ## Requirements
 
 You need to have the following things installed:
@@ -26,4 +28,12 @@ $>npm start
 
 ```
 $>npm build
+```
+
+## Deploy
+
+**Deploy to github pages**
+
+```
+$>npm run deploy
 ```
